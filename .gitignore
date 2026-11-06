@@ -1,0 +1,27 @@
+# Based on GitHub's standard Go.gitignore, plus this repo's bin/ folder.
+
+# Build output from `make build`
+/bin/
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binaries, built with `go test -c`
+*.test
+
+# Coverage and profiling output
+*.out
+coverage.*
+*.coverprofile
+profile.cov
+
+# Go workspace files are local to your machine
+go.work
+go.work.sum
+
+# Local environment variables
+.env
