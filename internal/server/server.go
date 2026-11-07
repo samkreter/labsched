@@ -1,9 +1,12 @@
 package server
 
-import "net/http"
+import (
+	"log/slog"
+	"net/http"
+)
 
 // New returns the HTTP handler for the service.
-func New() http.Handler {
+func New(logger slog.Logger) http.Handler {
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /healthz", handleHealthz)
 	return mux

@@ -1,0 +1,17 @@
+# golangci-lint config. Run with `make lint` or `golangci-lint run`.
+# See which linters are enabled with `golangci-lint linters`.
+
+version: "2"          # config format; v2 since 2025, older blog posts show v1
+
+linters:
+  # The defaults stay on: govet, staticcheck, errcheck, ineffassign, unused.
+  enable:             # added on top of the defaults
+    - bodyclose       # HTTP response bodies you forgot to close
+    - errorlint       # err == ErrX comparisons that break once errors are wrapped
+    - gosec           # common security mistakes, like missing server timeouts
+    - noctx           # HTTP requests built without a context
+
+formatters:
+  enable:
+    - gofmt
+    - goimports       # gofmt, plus sorting and grouping imports
